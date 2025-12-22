@@ -657,14 +657,6 @@ Numero,Nom
 
 ---
 
-## Support
-
-### Contacts
-
-**Questions / Bugs :**
-- 📧 Email : support@chronoracepro.com
-- 🌐 Site web : www.chronoracepro.com
-
 ### Mises à jour
 
 **Vérifier la version :**
@@ -719,5 +711,5 @@ Numero,Nom
 
 **FIN DU MANUEL UTILISATEUR**
 
-*Document créé le 22/12/2024*
+*Document créé le 22/12/2025
 *Chrono Race Pro - Tous droits réservés*
