@@ -1,264 +1,723 @@
- 
-📱 CHRONO RACE PRO - Notice Utilisateur 
-📖 Table des matières 
-Introduction
-Installation
-Modes de fonctionnement
-Mode LOCAL - 1 téléphone
-Mode DÉPART + ARRIVÉE - 2 téléphones
-Import de participants
-Chronométrage
-Export des résultats
-Dépannage 
- 🎯 Introduction {#introduction} 
-Chrono Race Pro est une application de chronométrage pour courses de ski et autres compétitions sportives. 
-Fonctionnalités principales : 
-⏱️ Chronométrage précis au dixième de seconde
-👥 Multi-coureurs avec départs séparés
-📱 Mode 1 ou 2 téléphones (avec SMS)
-📊 Import Excel/CSV de participants
-🏆 Classement automatique avec podium
-💾 Export CSV des résultats 
- 📲 Installation {#installation} 
-Prérequis 
-Android 5.0 minimum
-Permissions : SMS (pour mode 2 téléphones)
-Espace : ~10 MB 
-Installation 
-Téléchargez le fichier APK
-Autorisez l'installation depuis sources inconnues
-Lancez l'installation
-Acceptez les permissions SMS si demandées 
- 🔄 Modes de fonctionnement {#modes-de-fonctionnement} 
-L'application propose 3 modes :Mode Téléphones Usage🏠 LOCAL 1 Départs et arrivées sur le même appareil🚀 DÉPART 2 Enregistre les départs et envoie par SMS🏁 ARRIVÉE 2 Reçoit les départs par SMS et enregistre les arrivées 
-Comment choisir ? 
-Utilisez le MODE LOCAL si : - Vous avez 1 seul téléphone - Départ et arrivée sont proches - Simple et rapide à mettre en place 
-Utilisez le MODE 2 TÉLÉPHONES si : - Départ et arrivée sont éloignés - Vous voulez plus de précision - Vous avez 2 téléphones disponibles 
- 🏠 Mode LOCAL - 1 téléphone {#mode-local} 
-ConfigurationSélectionnez le mode “🏠 LOCAL”
-C'est tout ! Vous êtes prêt. 
-Utilisation pas à pas 
-Étape 1 : Importer les participants (optionnel) 
-Préparez un fichier Excel avec 2 colonnes : 
-Nom : Nom du participant
-Numero : Numéro de dossard
-Cliquez sur “📂 Importer fichier”
-Sélectionnez votre fichier
-✅ Confirmation : “X participants importés” 
-Étape 2 : Démarrer un coureur 
-Avec liste de participants : 1. Mode “📋 Liste” actif 2. Sélectionnez un participant dans le menu déroulant 3. Vérifiez les informations affichées 4.
-Cliquez sur “▶️ Démarrer le chrono” 
-Sans liste (mode manuel) : 1. Cliquez sur “✏️ Manuel” 2. Cliquez sur “▶️ Démarrer le chrono” 3. Un dossard est automatiquement attribué 
-Étape 3 : Pendant la course 
-Le coureur apparaît dans “🏃‍♂️ Coureurs en course” avec : - Son nom et dossard - Le temps qui défile en temps réel - 3 boutons d'action 
-Boutons disponibles : - ✅ ARRIVÉE : Enregistre l'arrivée du coureur - ⏸️ PAUSE : Met le chrono en pause (reprise possible) - ❌ ANNULER : Annule
-la course (supprime le coureur) 
-Étape 4 : Arrivée 
-Quand le coureur franchit la ligne, cliquez sur “✅ ARRIVÉE”
-Le coureur est automatiquement ajouté au classement
-Les positions (🥇🥈🥉) sont attribuées automatiquement 
-Exemple d'utilisation 
-09:00:00 - Départ Coureur #1
-09:00:30 - Départ Coureur #2
-09:01:45 - Arrivée Coureur #1 → Temps : 01:45.2
-09:02:10 - Arrivée Coureur #2 → Temps : 01:40.5
-→ Classement : #2 (1er), #1 (2ème)
+# Manuel Utilisateur - Chrono Race Pro ⏱️
 
- 📱📱 Mode 2 téléphones (DÉPART + ARRIVÉE) {#mode-2-telephones} 
-Configuration initiale 
-Sur le TÉLÉPHONE 1 (Départ) 
-Sélectionnez “🚀 DÉPART”
-Entrez le numéro du téléphone arrivée : +33612345678
-Le numéro est sauvegardé automatiquement ✅
-Importez vos participants (optionnel) 
-Sur le TÉLÉPHONE 2 (Arrivée) 
-Sélectionnez “🏁 ARRIVÉE”
-Attendez les SMS de départ 
-Utilisation synchronisée 
-Au DÉPART (Téléphone 1) 
-Démarrez un coureur (comme en mode LOCAL)
-Un SMS est automatiquement envoyé au téléphone arrivée
-Le départ est enregistré dans la liste des départs
-Le chrono ne tourne PAS sur ce téléphone 
-À L'ARRIVÉE (Téléphone 2) 
-Réception automatique (si plugin SMS activé) : - Le SMS arrive - Le coureur apparaît automatiquement dans “Coureurs en course” - Le chronodéfile en temps réel - Cliquez sur “✅ ARRIVÉE” quand il franchit la ligne 
-Réception manuelle (si problème SMS) : 1. Ouvrez l'application SMS native 2. Copiez le contenu du SMS (ex: DEPART|1|Jean Dupont
-1703248920000) 3. Dans l'app, collez-le dans le champ “📩 Réception SMS” 4. Cliquez sur “✅ TRAITER CE SMS” 5. Le coureur apparaît dans
-“Coureurs en course” 
-Format du SMS 
-DEPART|[Numéro]|[Nom]|[Timestamp]
- Exemple :
-DEPART|42|Jean Dupont|1703248920000
+**Version 3.0 - Application de chronométrage sportif**
 
-Schéma de fonctionnement 
-TÉLÉPHONE DÉPART SMS TÉLÉPHONE ARRIVÉE
-─────────────────────────────────────────────────────────
-  [Démarrer] ─────────────────> [Coureur reçu]
-Coureur #1 Chrono démarre
-  [SMS envoyé] [Chrono défile]
-⏱️ 00:45.2
-  [✅ ARRIVÉE]
-Temps enregistré
+---
 
- 📊 Import de participants {#import-participants} 
-Formats supportés 
-✅ Excel (.xlsx, .xls)
-✅ OpenOffice (.ods)
-✅ CSV (.csv) 
-Structure du fichier 
-Colonnes obligatoires :Nom NumeroJean Dupont 1Marie Martin 2Pierre Durand 3 
-Variantes acceptées : - Nom : Nom, nom, NAME, name, Prenom, prenom - Numero : Numero, numero, Dossard, dossard, Number 
-Exemple de fichier Excel 
-A | B
-─────────────────────
-Nom | Numero
-Jean Dupont| 1
-Marie Martin| 2
-Pierre Durand| 3
+## Table des matières
 
-Procédure d'import 
-Cliquez sur “📂 Importer fichier”
-Sélectionnez votre fichier
-Attendez le message : “X participants importés ✅”
-Les participants apparaissent dans le menu déroulant 
-Que faire en cas d'erreur ? 
-Erreur : “Aucun participant trouvé” - Vérifiez que les colonnes sont nommées Nom et Numero - Assurez-vous qu'il y a au moins 1 ligne de
-données - Supprimez les lignes videsErreur : “Erreur de lecture” - Vérifiez que le fichier n'est pas corrompu - Essayez de le sauvegarder dans un autre format - Fermez le fichier s'il est
-ouvert dans Excel 
- ⏱️ Chronométrage {#chronometrage} 
-Précision 
-Affichage : Au dixième de seconde (0.1s)
-Précision interne : À la milliseconde (0.001s) 
-Format du temps 
-HH:MM:SS.D
- Exemples :
-00:01:23.4 = 1 minute 23 secondes et 4 dixièmes
-01:45:32.8 = 1 heure 45 minutes 32 secondes et 8 dixièmes
+1. [Introduction](#introduction)
+2. [Installation](#installation)
+3. [Démarrage rapide](#démarrage-rapide)
+4. [Modes de fonctionnement](#modes-de-fonctionnement)
+5. [Import de participants](#import-de-participants)
+6. [Démarrage des coureurs](#démarrage-des-coureurs)
+7. [Gestion des courses](#gestion-des-courses)
+8. [Classement et export](#classement-et-export)
+9. [Mode multi-téléphones (SMS)](#mode-multi-téléphones)
+10. [Dépannage](#dépannage)
 
-Actions disponibles pendant la courseBouton Action Réversible ?✅ ARRIVÉE Enregistre l'arrivée ❌ Non⏸️ PAUSE Met le chrono en pause ✅ Oui▶️ REPRENDRE Reprend le chrono -❌ ANNULER Supprime le coureur ✅ Oui (si confirmé) 
-Classement automatique 
-Le classement est calculé automatiquement par ordre de temps : - 🥇 1er : Meilleur temps - 🥈 2ème : Deuxième meilleur temps - 🥉 3ème :
-Troisième meilleur temps - Puis positions 4, 5, 6... 
- 💾 Export des résultats {#export-resultats} 
-Format d'export : CSV 
-Le fichier CSV contient : - Position finale - Nom du coureur - Numéro de dossard - Temps (format HH:MM:SS.D) - Date et heure d'arrivée 
-Exemple de fichier exporté 
+---
+
+## 1. Introduction
+
+### Qu'est-ce que Chrono Race Pro ?
+
+Chrono Race Pro est une application Android de chronométrage pour courses et compétitions sportives. Elle permet de :
+
+- ✅ Chronométrer plusieurs coureurs simultanément
+- ✅ Gérer des départs séparés ou groupés
+- ✅ Importer une liste de participants depuis Excel
+- ✅ Utiliser 2 téléphones (départ/arrivée) via SMS
+- ✅ Exporter les résultats en CSV
+
+### Public cible
+
+- Organisateurs de courses
+- Chronométreurs sportifs
+- Clubs et associations
+- Événements sportifs amateurs
+
+---
+
+## 2. Installation
+
+### Prérequis
+
+- Appareil Android 5.0 ou supérieur
+- 50 Mo d'espace de stockage
+- Permissions requises :
+  - 📂 Stockage (pour import/export)
+  - 📱 SMS (pour mode multi-téléphones)
+  - 🎤 Microphone (pour dictée vocale)
+  - 👤 Contacts (optionnel)
+
+### Installation via APK
+
+1. Téléchargez le fichier `ChronoRacePro.apk`
+2. Autorisez l'installation depuis des sources inconnues
+3. Installez l'application
+4. Accordez les permissions demandées
+
+---
+
+## 3. Démarrage rapide
+
+### Premier lancement
+
+1. **Ouvrez l'application**
+   - L'écran principal s'affiche avec le titre "⏱️ Chrono Race Pro"
+
+2. **Choisissez votre mode de fonctionnement**
+   - 🏠 LOCAL : 1 seul téléphone (recommandé pour débuter)
+   - 🚀 DÉPART : Téléphone au départ (mode avancé)
+   - 🏁 ARRIVÉE : Téléphone à l'arrivée (mode avancé)
+
+3. **Démarrez votre première course**
+   - Cliquez sur "▶️ DÉMARRER LE CHRONO"
+   - Le chronomètre démarre automatiquement
+
+---
+
+## 4. Modes de fonctionnement
+
+### 🏠 Mode LOCAL (1 téléphone)
+
+**Usage :** Chronométrage complet sur un seul appareil
+
+**Avantages :**
+- Simple et rapide
+- Pas de configuration
+- Idéal pour petites courses
+
+**Fonctionnement :**
+1. Démarrez les coureurs au départ
+2. Enregistrez les arrivées sur le même téléphone
+3. Consultez le classement en temps réel
+
+---
+
+### 🚀 Mode DÉPART (téléphone 1)
+
+**Usage :** Placement au point de départ
+
+**Configuration requise :**
+1. Activez le mode DÉPART
+2. Entrez le numéro du téléphone ARRIVÉE
+3. Utilisez le bouton 👤 CONTACTS pour sélectionner
+
+**Fonctionnement :**
+- Enregistre l'heure de départ
+- Envoie automatiquement un SMS au téléphone ARRIVÉE
+- Affiche la liste des départs enregistrés
+
+**Format du SMS envoyé :**
+```
+DEPART|42|Jean Dupont|1703254789123
+```
+
+---
+
+### 🏁 Mode ARRIVÉE (téléphone 2)
+
+**Usage :** Placement au point d'arrivée
+
+**Fonctionnement automatique :**
+1. Reçoit les SMS du téléphone DÉPART
+2. Crée automatiquement les chronos
+3. Affiche les coureurs en course
+4. Enregistre les arrivées
+
+**Indicateur visuel :**
+- ✅ Réception SMS activée (bandeau vert)
+- 📩 Icône SMS sur les coureurs reçus par SMS
+
+---
+
+## 5. Import de participants
+
+### Formats de fichiers acceptés
+
+- 📊 Excel (.xlsx, .xls)
+- 📋 OpenDocument (.ods)
+- 📄 CSV
+
+### Structure du fichier
+
+**Colonnes requises :**
+| Nom | Numero |
+|-----|--------|
+| Jean Dupont | 42 |
+| Marie Martin | 15 |
+| Pierre Durand | 8 |
+
+**Colonnes acceptées :**
+- `Nom` / `nom` / `NAME` / `Prenom` / `prenom`
+- `Numero` / `numero` / `Dossard` / `dossard` / `Number`
+
+---
+
+### Procédure d'import
+
+1. **Cliquez sur "📥 IMPORTER"**
+2. **Sélectionnez votre fichier**
+3. **Vérifiez le message de confirmation**
+   - Exemple : "25 participants importés !"
+4. **Les participants apparaissent dans la liste déroulante**
+
+**Message de succès :**
+```
+✅ 25 participants importés !
+```
+
+**Message d'erreur :**
+```
+❌ Erreur : Aucun participant trouvé
+```
+
+---
+
+## 6. Démarrage des coureurs
+
+### Mode LISTE (avec import)
+
+**Prérequis :** Avoir importé des participants
+
+**Étapes :**
+1. Cliquez sur "📋 LISTE"
+2. Sélectionnez un participant dans la liste
+3. Vérifiez les informations affichées
+4. Cliquez sur "▶️ DÉMARRER LE CHRONO"
+
+**Indicateurs visuels :**
+- ✅ Participant déjà arrivé (grisé)
+- Nom et numéro de dossard affichés
+
+---
+
+### Mode MANUEL (sans import)
+
+**Usage :** Ajout de coureurs à la volée
+
+**Méthode 1 : Saisie manuelle**
+1. Cliquez sur "✏️ MANUEL"
+2. Entrez le nom du coureur
+3. Cliquez sur "▶️ DÉMARRER LE CHRONO"
+
+**Méthode 2 : Dictée vocale**
+1. Cliquez sur le bouton "🎤 DICTER"
+2. Autorisez l'accès au microphone
+3. Dictez le nom du coureur
+4. Le nom s'inscrit automatiquement
+
+**Numérotation automatique :**
+- Les dossards sont attribués automatiquement (1, 2, 3...)
+- Ou laissez vide pour "Coureur 1", "Coureur 2"...
+
+---
+
+### Liste d'attente (Mode Manuel avancé)
+
+**Fonction :** Préparer plusieurs coureurs avant le départ
+
+**Procédure :**
+1. Entrez un nom et cliquez "➕ AJOUTER À LA LISTE"
+2. Répétez pour tous les coureurs
+3. Cliquez "🚀 DÉMARRER" pour un départ groupé
+
+**Actions disponibles :**
+- ▶️ Démarrer un coureur individuellement
+- ❌ Supprimer un coureur de la liste
+- 🚀 DÉMARRER : Départ groupé de tous
+- 💾 EXPORT : Exporter la liste d'attente
+- 🗑️ VIDER : Effacer toute la liste
+
+**Avantage :** Départs simultanés précis au centième de seconde !
+
+---
+
+## 7. Gestion des courses
+
+### Coureurs en course
+
+**Affichage en temps réel :**
+- 💙 Nom du coureur en bleu
+- 🏷️ Numéro de dossard en or
+- ⏱️ Chronomètre en vert (mis à jour en continu)
+- 📩 Icône pour coureurs reçus par SMS
+
+---
+
+### Actions disponibles
+
+#### ✅ ARRIVÉE (bouton vert)
+- **Action :** Enregistre l'arrivée du coureur
+- **Effet :** 
+  - Chronomètre stoppé
+  - Temps enregistré
+  - Coureur ajouté au classement
+  - Message : "Dossard 42 arrivé en 00:15:23.5 !"
+
+#### ⏸️ PAUSE / ▶️ REPRENDRE (bouton orange)
+- **Action :** Met en pause ou reprend le chronomètre
+- **Usage :** 
+  - Incident de course
+  - Attente d'un passage
+  - Ne compte pas dans le temps final
+
+#### ❌ ANNULER (bouton rouge)
+- **Action :** Supprime le coureur de la course
+- **Usage :** 
+  - Abandon
+  - Erreur de départ
+  - Disqualification
+- **Confirmation requise**
+
+---
+
+### Animation visuelle
+
+**Effet de pulsation :**
+- Les cartes de coureurs "pulsent" pour attirer l'attention
+- Facilite le repérage sur l'écran
+- Plus visible en extérieur / plein soleil
+
+**Codes couleurs :**
+- 🔵 Bleu : Coureur actif
+- 🟢 Vert : Bouton d'arrivée
+- 🟠 Orange : Bouton pause
+- 🔴 Rouge : Bouton annulation
+
+---
+
+## 8. Classement et export
+
+### Affichage du classement
+
+**Classement automatique :**
+- Tri par temps (plus rapide en premier)
+- Position affichée (1er, 2e, 3e...)
+- Médailles pour le podium :
+  - 🥇 1er place
+  - 🥈 2e place
+  - 🥉 3e place
+
+**Informations affichées :**
+- Position
+- Nom du coureur
+- Numéro de dossard
+- Temps formaté (HH:MM:SS.d)
+
+---
+
+### Export des résultats
+
+**Format CSV exporté :**
+```csv
 Position,Nom,Numero,Temps,Date_Heure
-1,"Jean Dupont","42","00:01:23.4","22/12/2024 14:30:45"
-2,"Marie Martin","15","00:01:25.8","22/12/2024 14:31:02"
-3,"Pierre Durand","8","00:01:28.2","22/12/2024 14:31:15"
+1,"Jean Dupont","42","00:15:23.5","22/12/2024 14:30:45"
+2,"Marie Martin","15","00:16:12.3","22/12/2024 14:31:34"
+```
 
-Procédure d'export 
-Cliquez sur “💾 Exporter”
-Le fichier est téléchargé automatiquement
-Nom du fichier : resultats_AAAAMMJJ_HHMM.csv
-Ouvrez avec Excel, Google Sheets, ou tout tableur 
-Où trouver le fichier ? 
-Sur Android, le fichier est dans : /storage/emulated/0/Download/ ou Téléchargements/ 
-Ouvrir le fichier 
-Avec Excel : 1. Ouvrez Excel 2. Fichier → Ouvrir 3. Sélectionnez le fichier CSV 4. Choisissez “Délimité” avec séparateur “,” 
-Avec Google Sheets : 1. Ouvrez Google Sheets 2. Fichier → Importer 3. Sélectionnez votre fichier 4. ✅ Validation 
- 🗑️ Effacer les donnéesBouton “🗑️ Effacer” 
-Supprime : - ✅ Tous les arrivants - ✅ Tous les coureurs en course - ✅ Tous les départs enregistrés - ✅ L'historique des courses 
-Conserve : - ✅ La liste des participants importés - ✅ Le mode sélectionné - ✅ Le numéro de téléphone arrivée 
-Confirmation 
-Un message de confirmation apparaît : Voulez-vous vraiment tout effacer ? [Annuler] [OK] 
-⚠️ Attention : Cette action est irréversible ! 
-Conseil : Exportez vos résultats AVANT d'effacer. 
- 🔧 Dépannage {#depannage} 
-Problème : L'application ne démarre pas 
-Solutions : 1. Vérifiez la version Android (minimum 5.0) 2. Réinstallez l'application 3. Redémarrez le téléphone 4. Vérifiez l'espace de stockage
-disponible 
-Problème : Les SMS ne sont pas reçus 
-Solutions : 
-Vérifiez les permissions SMS 
-Paramètres → Applications → Chrono Race Pro
-Permissions → SMS → Autorisé ✅
-Testez en mode manuel 
-Mode ARRIVÉE
-Copiez le SMS depuis l'app SMS native
-Collez dans le champ “Réception SMS”
-Vérifiez le numéro de téléphone 
-Format international : +33612345678
-Pas d'espaces, pas de tirets
-Redémarrez la réception SMS 
-Fermez complètement l'app
-Relancez-la
-Mode ARRIVÉE 
-Problème : Import de fichier échoue 
-Solutions : 
-Vérifiez le format du fichier 
-Extensions acceptées : .xlsx, .xls, .ods, .csv
-Pas de fichiers .numbers (Mac)
-Vérifiez les colonnes 
-Colonnes requises : Nom et Numero
-Respectez la casse (majuscules/minuscules acceptées)
-Vérifiez le contenu 
-Au moins 1 ligne de données
-Pas de lignes vides au début
-Caractères spéciaux acceptés
-Recréez le fichier 
-Créez un nouveau fichier Excel
-Copiez-collez les données
-Sauvegardez en .xlsxProblème : Le chrono ne démarre pas 
-Solutions : 
-Vérifiez le mode 
-En mode DÉPART, le chrono ne tourne pas localement
-Passez en mode LOCAL ou ARRIVÉE
-Vérifiez la sélection 
-En mode Liste : sélectionnez un participant
-En mode Manuel : cliquez directement sur “Démarrer”
-Redémarrez l'application 
-Fermez complètement
-Relancez 
-Problème : Le temps affiche 00:00:00.0 
-Causes possibles : - Le coureur a été démarré en mode DÉPART - Le SMS n'est pas arrivé sur le téléphone ARRIVÉE - Vérifiez le mode de
-fonctionnement 
-Problème : Export CSV ne fonctionne pas 
-Solutions : 
-Vérifiez qu'il y a des résultats 
-Au moins 1 arrivée enregistrée
-Vérifiez les permissions de stockage 
-Paramètres → Applications → Chrono Race Pro
-Permissions → Stockage → Autorisé ✅
-Vérifiez l'espace disponible 
-Besoin : ~1 KB par résultat
-Libérez de l'espace si nécessaire 
-Problème : Participant marqué “Déjà arrivé” 
-Explication : - Le participant a déjà terminé sa course - Il apparaît grisé dans la liste 
-Solutions : - Utilisez le bouton “🗑️ Effacer” pour réinitialiser - Ou sélectionnez un autre participant 
- 📝 Conseils d'utilisation 
-Avant la course 
-✅ Chargez les téléphones à 100% ✅ Testez la réception SMS (mode 2 téléphones) ✅ Importez la liste des participants à l'avance ✅ Faites un
-test complet avec 2-3 coureurs fictifs ✅ Vérifiez l'heure des téléphones (synchronisation)Pendant la course 
-✅ Gardez l'écran allumé (empêche la mise en veille) ✅ Ne fermez pas l'application ✅ Évitez les appels téléphoniques ✅ Exportez
-régulièrement les résultats (sécurité) 
-Après la course 
-✅ Exportez les résultats finaux ✅ Sauvegardez le fichier CSV dans le cloud ✅ Effacez les données si nouvelle course ✅ Rechargez les
-téléphones 
- 🎯 Astuces 
-Astuce 1 : Numérotation des dossards 
-Numérotez vos dossards de manière logique : - 1-99 : Catégorie A - 100-199 : Catégorie B - 200-299 : Catégorie C 
-Astuce 2 : Tests préalables 
-Testez TOUJOURS avant une vraie course : 1. Créez 3 coureurs fictifs 2. Démarrez-les à 10 secondes d'intervalle 3. Enregistrez les arrivées 4.
-Vérifiez le classement 5. Exportez le CSV 6. Effacez tout 
-Astuce 3 : Batterie 
-Pour économiser la batterie : - Réduisez la luminosité - Désactivez le WiFi - Désactivez le Bluetooth - Mode avion (sauf si SMS nécessaires) 
-Astuce 4 : Visibilité en extérieur 
-Par temps ensoleillé : - Luminosité au maximum - Utilisez un film protecteur anti-reflet - Positionnez-vous dos au soleil 
-Astuce 5 : Organisation 
-Téléphone DÉPART : - Placez-le près du portillon de départ - Une personne dédiée pour déclencher 
-Téléphone ARRIVÉE : - Placez-le près de la ligne d'arrivée - Bonne visibilité sur la ligne - À l'abri des intempéries 
- ⚖️ Mentions légales 
-Chrono Race Pro v1.0.0 
-© 2024 - Tous droits réservés 
-Cette application est fournie “telle quelle” sans garantie d'aucune sorte. L'utilisateur assume tous les risques liés à son utilisation. 
- 🔄 Historique des versions 
-Version 1.0.0 (Décembre 2024) 
-🎉 Version initiale
-⏱️ Chronométrage multi-coureurs
-📱 Mode 1 et 2 téléphones
-📊 Import Excel/CSV
-💾 Export CSV
-📩 Envoi/réception SMS 
- Bonne course ! ?
+**Procédure d'export :**
+1. Cliquez sur "💾 EXPORTER"
+2. Le fichier est sauvegardé automatiquement
+3. Emplacement : Dossier "Téléchargements"
+4. Nom : `resultats_AAAAMMJJ_HHMM.csv`
+
+**Message de confirmation :**
+```
+✅ FICHIER EXPORTÉ !
+📂 Dossier: Téléchargements
+📄 Nom: resultats_20241222_1430.csv
+```
+
+---
+
+### Ouverture des résultats
+
+**Sur Android :**
+1. Ouvrez l'application "Fichiers" ou "Mes fichiers"
+2. Allez dans "Téléchargements"
+3. Ouvrez avec Excel, Google Sheets ou Numbers
+
+**Sur ordinateur :**
+1. Connectez votre téléphone en USB
+2. Copiez le fichier CSV
+3. Ouvrez avec Excel, LibreOffice, etc.
+
+---
+
+### Effacer les données
+
+**Bouton "🗑️ EFFACER" :**
+
+**Données supprimées :**
+- ✓ Tous les coureurs en course
+- ✓ Tous les résultats
+- ✓ Historique des départs (mode SMS)
+- ✓ Statuts "déjà arrivé" des participants
+
+**Données conservées :**
+- ✓ Liste des participants importés
+- ✓ Configuration mode SMS
+- ✓ Numéros de téléphone
+
+**Confirmation requise avant suppression**
+
+**[INSÉRER CAPTURE : Dialogue de confirmation d'effacement]**
+
+---
+
+## 9. Mode multi-téléphones (SMS)
+
+### Configuration initiale
+
+**Téléphone DÉPART (1):**
+1. Mode : 🚀 DÉPART
+2. Entrez le numéro du téléphone ARRIVÉE
+3. Format : +33612345678 ou 0612345678
+4. Sauvegarde automatique
+
+**Téléphone ARRIVÉE (2):**
+1. Mode : 🏁 ARRIVÉE
+2. Vérifiez le bandeau "✅ Réception SMS activée"
+3. Prêt à recevoir
+
+---
+
+### Utilisation du carnet de contacts
+
+**Sélection rapide :**
+1. Cliquez sur "👤 CONTACTS"
+2. Autorisez l'accès aux contacts
+3. Recherchez le contact
+4. Sélectionnez le numéro
+5. Sauvegarde automatique
+
+**Recherche intelligente :**
+- Par nom
+- Par numéro
+- Compteur de résultats affichés
+
+---
+
+### Flux de communication
+
+**Scénario type :**
+
+1. **Au DÉPART (téléphone 1) :**
+   - Coureur prêt au départ
+   - Clic sur "▶️ DÉMARRER LE CHRONO"
+   - SMS envoyé automatiquement
+   - Départ enregistré dans la liste
+
+2. **À l'ARRIVÉE (téléphone 2) :**
+   - Réception du SMS (automatique)
+   - Coureur créé automatiquement
+   - Icône 📩 visible
+   - Chronomètre démarré
+
+3. **Arrivée du coureur :**
+   - Clic sur "✅ ARRIVÉE"
+   - Temps calculé depuis le SMS de départ
+   - Classement mis à jour
+
+---
+
+### Avantages du mode SMS
+
+✅ **Précision maximale**
+- Timestamp exact du départ
+- Pas de décalage horaire
+
+✅ **Distance illimitée**
+- Fonctionne même sans internet
+- Utilise le réseau GSM
+
+✅ **Automatisation complète**
+- Pas de saisie manuelle
+- Moins d'erreurs
+
+✅ **Traçabilité**
+- Historique complet des départs
+- Export possible
+
+---
+
+### Permissions SMS requises
+
+**Lors du premier lancement :**
+1. Autoriser l'envoi de SMS
+2. Autoriser la réception de SMS
+3. Autoriser la lecture de SMS
+
+**Si les permissions sont refusées :**
+1. Menu Android → Paramètres
+2. Applications → Chrono Race Pro
+3. Autorisations
+4. Activer SMS
+
+**Redémarrage de l'app recommandé après activation**
+
+---
+
+## 10. Dépannage
+
+### Problèmes courants
+
+#### ❌ "Plugin File non disponible"
+
+**Cause :** Permission de stockage refusée
+
+**Solution :**
+1. Paramètres Android → Applications → Chrono Race Pro
+2. Autorisations → Stockage
+3. Autoriser
+4. Redémarrer l'app
+
+---
+
+#### ❌ Import échoue
+
+**Symptômes :** Message "Aucun participant trouvé"
+
+**Solutions :**
+1. Vérifiez les noms de colonnes (Nom, Numero)
+2. Vérifiez que le fichier n'est pas vide
+3. Essayez de convertir en .xlsx
+4. Supprimez les lignes vides
+
+**Format correct :**
+```
+Nom         | Numero
+------------|--------
+Jean Dupont | 42
+```
+
+---
+
+#### ❌ SMS non reçus
+
+**Vérifications :**
+1. **Permissions SMS** : Autorisées sur les 2 téléphones
+2. **Réseau** : Signal GSM présent
+3. **Numéro** : Format correct (+33... ou 06...)
+4. **Redémarrage** : Redémarrer les 2 apps
+
+**Test manuel :**
+1. Envoyez un SMS normal entre les 2 téléphones
+2. Vérifiez la réception
+3. Si OK, testez avec l'app
+
+**Utilisation du menu debug 🔧 :**
+- Bouton en haut à droite
+- "📩 Simuler 1 SMS" pour tester
+- "📡 Logs" pour voir les détails
+
+---
+
+#### ❌ Dictée vocale ne fonctionne pas
+
+**Causes possibles :**
+1. Permission microphone refusée
+2. Pas de connexion internet (requise pour reconnaissance vocale)
+3. Langue du téléphone non française
+
+**Solutions :**
+1. Autoriser le microphone
+2. Connecter en WiFi ou 4G
+3. Paramètres → Langue → Français
+
+---
+
+#### ❌ Export bloqué
+
+**Message :** "Erreur accès au dossier Téléchargements"
+
+**Solution :**
+1. Vérifier les permissions de stockage
+2. Vérifier l'espace disponible (>10 Mo)
+3. Redémarrer le téléphone
+
+---
+
+### Fonctionnalités avancées
+
+#### 🔧 Menu Debug
+
+**Accès :** Bouton 🔧 en haut à droite
+
+**Outils disponibles :**
+- 📩 Simuler 1 SMS : Tester la réception
+- 📩📩 Plusieurs SMS : Test de charge
+- 🔍 Test format : Vérifier un SMS
+- 📡 Logs : Afficher les logs en temps réel
+- 📱 Envoi test : Envoyer un SMS test
+- 🔌 Test plugins : Vérifier les plugins installés
+
+---
+
+#### 💾 Export de la liste d'attente
+
+**Usage :** Sauvegarder vos coureurs en attente
+
+**Procédure :**
+1. Ajoutez des coureurs à la liste
+2. Cliquez "💾 EXPORT"
+3. Fichier sauvegardé : `liste_attente_AAAAMMJJ_HHMM.csv`
+
+**Format :**
+```csv
+Numero,Nom
+"1","Jean Dupont"
+"2","Marie Martin"
+```
+
+---
+
+### Sauvegarde automatique
+
+**Données sauvegardées automatiquement :**
+- ✓ Liste des participants importés
+- ✓ Résultats des arrivées
+- ✓ Numéro de téléphone ARRIVÉE
+- ✓ Mode sélectionné (LOCAL/DÉPART/ARRIVÉE)
+- ✓ Prochain numéro de dossard
+- ✓ Liste d'attente
+- ✓ Historique des départs (mode SMS)
+
+**Persistance :** Les données restent après fermeture de l'app
+
+---
+
+### Réinitialisation complète
+
+**Si l'application ne fonctionne plus correctement :**
+
+1. **Exporter vos données** (si possible)
+2. **Désinstaller l'application**
+3. **Supprimer les données :**
+   - Paramètres → Applications → Chrono Race Pro
+   - Stockage → Effacer les données
+4. **Réinstaller l'application**
+5. **Réimporter vos participants**
+
+---
+
+## Conseils d'utilisation
+
+### 📱 En compétition
+
+**Préparation :**
+1. Charger complètement les téléphones
+2. Tester la connexion SMS si mode multi-téléphones
+3. Importer la liste des participants la veille
+4. Faire des tests à blanc
+
+**Pendant la course :**
+1. Mode avion OFF (pour SMS)
+2. Luminosité au maximum
+3. Ne pas fermer l'application
+4. Faire des exports réguliers
+
+---
+
+### ⚡ Performance
+
+**Optimisation :**
+- Fermer les autres applications
+- Désactiver les notifications
+- Utiliser un support/trépied pour stabilité
+- Prévoir une batterie externe
+
+---
+
+### 🌧️ Conditions difficiles
+
+**Protection :**
+- Utiliser un étui étanche si pluie
+- Gants tactiles pour le froid
+- Pare-soleil pour la luminosité
+
+**Visibilité optimale :**
+- Design haute visibilité (vert/or/bleu)
+- Gros boutons faciles à toucher
+- Animations pour attirer l'œil
+
+---
+
+## Annexes
+
+### Raccourcis clavier
+
+- **Entrée** en mode manuel : Ajouter à la liste d'attente
+
+### Codes couleur
+
+---
+
+## Support
+
+### Contacts
+
+**Questions / Bugs :**
+- 📧 Email : support@chronoracepro.com
+- 🌐 Site web : www.chronoracepro.com
+
+### Mises à jour
+
+**Vérifier la version :**
+- Version actuelle : 3.0
+- Consultez régulièrement les mises à jour
+
+---
+
+## Annexes
+
+### Raccourcis clavier
+
+- **Entrée** en mode manuel : Ajouter à la liste d'attente
+
+### Codes couleur
+
+| Couleur | Signification |
+|---------|---------------|
+| 🟢 Vert | Action positive (Arrivée, Démarrer) |
+| 🟠 Orange | Action intermédiaire (Pause, Info) |
+| 🔴 Rouge | Action destructive (Annuler, Supprimer) |
+| 🔵 Bleu | Coureur actif |
+| 🟣 Violet | Liste d'attente |
+| 🟡 Or | Titres et numéros |
+
+---
+
+### Limites techniques
+
+- **Coureurs simultanés :** Illimité (limité par la RAM)
+- **Participants importables :** Illimité
+- **Taille fichier export :** Illimité
+- **Précision chronomètre :** 1/10e de seconde affiché, 1ms en interne
+- **Distance SMS :** Limitée par le réseau GSM
+
+---
+
+## Historique des versions
+
+### Version 3.0 (Actuelle)
+- ➕ Mode LOCAL / DÉPART / ARRIVÉE
+- ➕ Communication SMS entre téléphones
+- ➕ Liste d'attente pour départs groupés
+- ➕ Dictée vocale
+- ➕ Sélection dans contacts
+- ➕ Export liste d'attente
+- ➕ Menu debug avancé
+- ➕ Design haute visibilité optimisé neige
+- ➕ Sauvegarde automatique complète
+
+---
+
+**FIN DU MANUEL UTILISATEUR**
+
+*Document créé le 22/12/2024*
+*Chrono Race Pro - Tous droits réservés*
