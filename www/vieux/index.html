@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://cdn.sheetjs.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    
+    <title>Chrono Race Pro</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="app">
+        <!-- En-tête -->
+        <header>
+            <h1>⏱️ Chrono Race Pro</h1>
+            <p id="label-mode" style="margin-top: 10px; font-size: 18px; opacity: 0.9;">Multi-coureurs avec départs séparés</p>
+        </header>
+
+        <!-- Sélection du mode d'application -->
+        <div class="mode-app-section">
+            <h2>📱 Mode de fonctionnement</h2>
+            <div class="mode-app-switch">
+                <button id="btn-mode-local" class="mode-app-btn active">🏠 LOCAL<br><small>1 téléphone</small></button>
+                <button id="btn-mode-depart" class="mode-app-btn">🚀 DÉPART<br><small>Téléphone 1</small></button>
+                <button id="btn-mode-arrivee" class="mode-app-btn">🏁 ARRIVÉE<br><small>Téléphone 2</small></button>
+            </div>
+            
+            <!-- Aide contextuelle -->
+            <div id="mode-help" style="margin-top: 15px; padding: 15px; background: rgba(255, 215, 0, 0.1); border: 2px solid #FFD700; border-radius: 15px;">
+                <p id="help-text" style="color: #FFD700; font-size: 16px; line-height: 1.6; margin: 0;">
+                    <strong>MODE LOCAL :</strong> Chronométrez avec 1 seul téléphone. Départs et arrivées sur le même appareil.
+                </p>
+            </div>
+            
+            <!-- Configuration SMS (visible en mode DÉPART) -->
+            <div id="config-sms" style="display:none; margin-top: 20px;">
+                <p class="info-text" style="color: #FFD700;">📞 Numéro du téléphone ARRIVÉE :</p>
+                <div style="position: relative;">
+                    <input type="tel" id="input-tel-arrivee" placeholder="+33612345678" class="input-tel">
+                    <span id="tel-saved-indicator" style="display:none; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #00FF00; font-size: 24px; font-weight: 900;">✓</span>
+                </div>
+                <p class="info-text" style="color: #00FF00; font-size: 14px; margin-top: 10px; text-align: center;">
+                    💾 Le numéro est sauvegardé automatiquement
+                </p>
+            </div>
+        </div>
+
+        <!-- Info SMS automatique (Mode ARRIVEE uniquement) -->
+        <div id="reception-sms-section" class="mode-app-section" style="display:none;">
+            <h2>📩 Réception SMS automatique</h2>
+            <p class="info-text" style="color: #00FF00; text-align: center; font-size: 20px;">
+                ✅ Les SMS de départ seront reçus automatiquement<br>
+                <small style="font-size: 16px; opacity: 0.8;">Assurez-vous que les permissions SMS sont activées</small>
+            </p>
+        </div>
+
+        <!-- Liste des départs (mode DÉPART uniquement) -->
+        <div id="departs-section" class="departs-section" style="display:none;">
+            <h2>🚀 Départs enregistrés</h2>
+            <div id="departs-liste" class="departs-liste">
+                <p class="empty-message">Aucun départ enregistré</p>
+            </div>
+        </div>
+
+        <!-- Import de participants -->
+        <div class="import-section">
+            <h2>📂 Import de participants</h2>
+            <p class="info-text">Importez un fichier Excel/OpenOffice avec les colonnes : Nom, Numero</p>
+            
+            <input type="file" id="file-input" accept=".xlsx,.xls,.ods,.csv" style="display:none">
+            <button id="btn-import" class="btn btn-info">📥 Importer fichier</button>
+            
+            <div id="import-status" class="import-status"></div>
+        </div>
+
+        <!-- Démarrer un coureur -->
+        <div class="record-section">
+            <h2 id="titre-demarrage">🏃 Démarrer un coureur</h2>
+            
+            <!-- Mode : Liste ou Manuel -->
+            <div class="mode-switch">
+                <button id="btn-mode-liste" class="mode-btn active">📋 Liste</button>
+                <button id="btn-mode-manuel" class="mode-btn">✏️ Manuel</button>
+            </div>
+            
+            <!-- Mode Liste -->
+            <div id="mode-liste" class="mode-container">
+                <div class="form-group">
+                    <select id="select-participant" class="select-participant">
+                        <option value="">-- Sélectionnez un participant --</option>
+                    </select>
+                </div>
+                <div id="participant-info" class="participant-info"></div>
+            </div>
+            
+            <!-- Mode Manuel -->
+            <div id="mode-manuel" class="mode-container" style="display:none">
+                <p class="info-text" style="color: #FFD700; font-size: 18px; text-align: center; margin: 20px 0;">
+                    ✅ Un dossard sera automatiquement attribué à chaque départ
+                </p>
+            </div>
+            
+            <button id="btn-demarrer" class="btn btn-success">▶️ Démarrer le chrono</button>
+        </div>
+
+        <!-- Coureurs actifs -->
+        <div class="coureurs-section">
+            <h2>🏃‍♂️ Coureurs en course</h2>
+            <div id="coureurs-actifs" class="coureurs-actifs">
+                <p class="empty-message">Aucun coureur en course</p>
+            </div>
+        </div>
+
+        <!-- Liste des arrivants -->
+        <div class="list-section">
+            <div class="list-header">
+                <h2>🏆 Classement (<span id="count">0</span>/<span id="total">0</span>)</h2>
+                <div class="list-actions">
+                    <button id="btn-exporter" class="btn btn-small">💾 Exporter</button>
+                    <button id="btn-effacer" class="btn btn-small btn-danger">🗑️ Effacer</button>
+                </div>
+            </div>
+            
+            <div id="liste-arrivants" class="liste-arrivants">
+                <p class="empty-message">Aucun arrivant enregistré</p>
+            </div>
+        </div>
+
+        <!-- Section Debug -->
+  <!--       <div class="mode-app-section" style="margin-top: 30px;">
+            <h2>🔧 Outils de débogage</h2>
+            <button id="btn-toggle-debug" class="btn btn-info" onclick="ouvrirMenuDebug()">
+                🔍 Afficher le menu debug
+            </button>
+        </div>
+    </div>   
+  -->  
+    <!-- Bibliothèque SheetJS pour lire Excel/ODS -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

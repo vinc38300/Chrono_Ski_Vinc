@@ -1,0 +1,212 @@
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.app {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Sections communes */
+.import-section,
+.record-section,
+.coureurs-section,
+.list-section {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.import-section h2,
+.record-section h2,
+.coureurs-section h2,
+.list-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Boutons */
+.btn {
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-primary {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #45a049;
+}
+
+.btn-danger {
+    background: #f44336;
+    color: white;
+}
+
+.btn-success {
+    background: #2196F3;
+    color: white;
+    width: 100%;
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 14px;
+    flex: none;
+}
+
+.btn-info {
+    background: #17a2b8;
+    color: white;
+    width: 100%;
+}
+
+/* Section import */
+.info-text {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.import-status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.import-status.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.import-status.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Mode switch */
+.mode-switch {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mode-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.mode-container {
+    margin-bottom: 15px;
+}
+
+/* Sélecteur de participant */
+.select-participant {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+}
+
+.select-participant:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.select-participant:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+    color: #999;
+}
+
+.participant-info {
+    margin-top: 10px;
+    padding: 15px;
+    background: #f0f8ff;
+    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    display: none;
+}
+
+.participant-info.visible {
+    display: block;
+}
+
+.participant-info strong {
+    color: #667eea;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: border 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Coureurs actifs */
+.

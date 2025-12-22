@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.monapp.chronorace" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Chrono Ski Vinc</name>
+    <description>Application de chronométrage pour courses</description>
+    <author email="votre@email.com" href="https://votresite.com">
+        Votre Nom
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    
+    <!-- Configuration Android -->
+    <platform name="android">
+        <allow-intent href="market:*" />
+        
+        <!-- Permissions SMS -->
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.SEND_SMS" />
+            <uses-permission android:name="android.permission.READ_SMS" />
+            <uses-permission android:name="android.permission.RECEIVE_SMS" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.READ_CONTACTS" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+        </config-file>
+        
+        <!-- Icônes -->
+        <icon src="res/android/ldpi.png" density="ldpi" />
+        <icon src="res/android/mdpi.png" density="mdpi" />
+        <icon src="res/android/hdpi.png" density="hdpi" />
+        <icon src="res/android/xhdpi.png" density="xhdpi" />
+        <icon src="res/android/xxhdpi.png" density="xxhdpi" />
+        <icon src="res/android/xxxhdpi.png" density="xxxhdpi" />
+        
+        <!-- Nom court sous l'icône (max 12 caractères) -->
+        <preference name="AndroidLauncherName" value="ChronoRace" />
+        
+        <!-- Désactiver le splash screen si vous n'en voulez pas -->
+        <preference name="SplashScreen" value="none" />
+        <preference name="SplashScreenDelay" value="0" />
+    </platform>
+      
+    <!-- Configuration iOS (si besoin plus tard) -->
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
