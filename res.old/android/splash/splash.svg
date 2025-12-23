@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="blueGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="redGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow3">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
+      <feOffset dx="0" dy="10" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Fond dégradé sombre -->
+  <rect width="1000" height="1000" fill="url(#bgGrad)"/>
+  
+  <!-- Cercles décoratifs en arrière-plan -->
+  <circle cx="200" cy="200" r="150" fill="#3b82f6" opacity="0.05"/>
+  <circle cx="800" cy="800" r="200" fill="#ef4444" opacity="0.05"/>
+  
+  <!-- Grand chronomètre central -->
+  <g transform="translate(500, 450)">
+    <!-- Cercle extérieur avec effet lumineux -->
+    <circle cx="0" cy="0" r="280" fill="#1e293b" opacity="0.3"/>
+    <circle cx="0" cy="0" r="270" fill="url(#blueGrad3)" opacity="0.2"/>
+    
+    <!-- Cercle principal - moitié bleue -->
+    <path d="M 0 -250 A 250 250 0 0 1 0 250 L 0 0 Z" fill="url(#blueGrad3)" filter="url(#shadow3)"/>
+    
+    <!-- Cercle principal - moitié rouge -->
+    <path d="M 0 -250 A 250 250 0 0 0 0 250 L 0 0 Z" fill="url(#redGrad3)" filter="url(#shadow3)"/>
+    
+    <!-- Bouton du haut -->
+    <rect x="-30" y="-270" width="60" height="35" rx="8" fill="#64748b"/>
+    <rect x="-40" y="-280" width="80" height="20" rx="10" fill="#94a3b8"/>
+    
+    <!-- Marques d'heure -->
+    <g opacity="0.9">
+      <!-- 12 heures -->
+      <rect x="-12" y="-230" width="24" height="40" rx="4" fill="white"/>
+      <!-- 3 heures -->
+      <rect x="190" y="-12" width="40" height="24" rx="4" fill="white"/>
+      <!-- 6 heures -->
+      <rect x="-12" y="190" width="24" height="40" rx="4" fill="white"/>
+      <!-- 9 heures -->
+      <rect x="-230" y="-12" width="40" height="24" rx="4" fill="white"/>
+    </g>
+    
+    <!-- Petites marques -->
+    <g opacity="0.7">
+      <circle cx="175" cy="-175" r="8" fill="white"/>
+      <circle cx="175" cy="175" r="8" fill="white"/>
+      <circle cx="-175" cy="175" r="8" fill="white"/>
+      <circle cx="-175" cy="-175" r="8" fill="white"/>
+    </g>
+    
+    <!-- Centre du chronomètre -->
+    <circle cx="0" cy="0" r="35" fill="#0f172a"/>
+    <circle cx="0" cy="0" r="25" fill="url(#goldGrad3)" filter="url(#glow)"/>
+    
+    <!-- Aiguille des minutes (rouge) -->
+    <line x1="0" y1="0" x2="0" y2="-150" stroke="#dc2626" stroke-width="12" stroke-linecap="round" opacity="0.9"/>
+    
+    <!-- Aiguille des secondes (bleue) -->
+    <line x1="0" y1="0" x2="120" y2="-80" stroke="#3b82f6" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+    
+    <!-- Point central -->
+    <circle cx="0" cy="0" r="15" fill="#FFD700" filter="url(#glow)"/>
+    
+    <!-- Reflet brillant -->
+    <ellipse cx="-80" cy="-120" rx="80" ry="120" fill="white" opacity="0.1"/>
+  </g>
+  
+  <!-- Texte "Crono Vinc'" -->
+  <text x="500" y="780" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="90" font-weight="900" fill="url(#goldGrad3)" filter="url(#glow)">Crono Vinc'</text>
+  
+  <!-- Sous-titre -->
+  <text x="500" y="840" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white" opacity="0.8">Chronométrage Pro</text>
+  
+  <!-- Version -->
+  <text x="500" y="900" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#94a3b8" opacity="0.6">v3.0</text>
+</svg>

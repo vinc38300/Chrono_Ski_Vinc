@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Dégradé bleu -->
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Dégradé rouge -->
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Dégradé or -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Ombre -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Ombre texte -->
+    <filter id="textShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Cercle extérieur bleu clair -->
+  <circle cx="100" cy="100" r="95" fill="#dbeafe" opacity="0.3"/>
+  
+  <!-- Cercle principal - moitié bleue -->
+  <path d="M 100 10 A 90 90 0 0 1 100 190 L 100 100 Z" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  
+  <!-- Cercle principal - moitié rouge -->
+  <path d="M 100 10 A 90 90 0 0 0 100 190 L 100 100 Z" fill="url(#redGrad)" filter="url(#shadow)"/>
+  
+  <!-- Bouton du haut -->
+  <rect x="90" y="5" width="20" height="15" rx="3" fill="#64748b"/>
+  <rect x="85" y="0" width="30" height="8" rx="4" fill="#94a3b8"/>
+  
+  <!-- Marques d'heure principales -->
+  <rect x="97" y="20" width="6" height="15" fill="white" opacity="0.9"/>
+  <rect x="165" y="97" width="15" height="6" fill="white" opacity="0.9"/>
+  <rect x="97" y="165" width="6" height="15" fill="white" opacity="0.9"/>
+  <rect x="20" y="97" width="15" height="6" fill="white" opacity="0.9"/>
+  
+  <!-- Petites marques -->
+  <circle cx="130" cy="130" r="3" fill="white" opacity="0.7"/>
+  <circle cx="70" cy="130" r="3" fill="white" opacity="0.7"/>
+  <circle cx="130" cy="70" r="3" fill="white" opacity="0.7"/>
+  <circle cx="70" cy="70" r="3" fill="white" opacity="0.7"/>
+  
+  <!-- Centre du chronomètre -->
+  <circle cx="100" cy="100" r="12" fill="#1e293b"/>
+  <circle cx="100" cy="100" r="8" fill="url(#goldGrad)"/>
+  
+  <!-- Aiguille des minutes (rouge) -->
+  <line x1="100" y1="100" x2="100" y2="45" stroke="#dc2626" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Aiguille des secondes (bleue) -->
+  <line x1="100" y1="100" x2="140" y2="80" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Point central -->
+  <circle cx="100" cy="100" r="5" fill="#FFD700"/>
+  
+  <!-- Reflet brillant -->
+  <ellipse cx="80" cy="60" rx="30" ry="40" fill="white" opacity="0.15"/>
+  
+  <!-- Texte "Crono" en haut (style manuscrit) -->
+  <text x="100" y="145" text-anchor="middle" font-family="'Brush Script MT', cursive, Arial" font-size="22" font-weight="bold" fill="#FFD700" filter="url(#textShadow)">Crono</text>
+  
+  <!-- Texte "Vinc'" en bas -->
+  <text x="100" y="165" text-anchor="middle" font-family="'Brush Script MT', cursive, Arial" font-size="20" font-weight="bold" fill="white" filter="url(#textShadow)">Vinc'</text>
+</svg>
