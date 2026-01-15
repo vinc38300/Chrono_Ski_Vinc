@@ -1,0 +1,6 @@
+Version 3.0.2 - F-Droid preparation
+
+- GPL-3.0 license harmonization
+- Optimizations for reproducible builds
+- Stability improvements
+- Minor fixes

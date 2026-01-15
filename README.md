@@ -713,3 +713,73 @@ Numero,Nom
 
 *Document créé le 22/12/2025
 *Chrono Race Pro - Tous droits réservés*
+---
+
+## 📱 Installation
+
+### Via F-Droid (Recommandé)
+
+L'application est disponible sur F-Droid, le catalogue d'applications libres pour Android.
+
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/com.monapp.chronorace/)
+
+### Via APK
+
+Téléchargez la dernière version depuis la [page des releases](https://github.com/vinc38300/Chrono_Ski_Vinc/releases).
+
+---
+
+## 📄 Licence
+
+Ce projet est distribué sous licence **GPL-3.0-only**.
+
+Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+Cette application est :
+- ✅ 100% gratuite
+- ✅ Sans publicité
+- ✅ Sans tracking
+- ✅ Respectueuse de votre vie privée
+- ✅ Code source ouvert
+
+---
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à :
+
+- 🐛 Signaler des bugs dans les [Issues](https://github.com/vinc38300/Chrono_Ski_Vinc/issues)
+- 💡 Proposer des améliorations
+- 🔧 Soumettre des Pull Requests
+- 📖 Améliorer la documentation
+
+---
+
+## 👨‍💻 Auteur
+
+Développé par **vinc38300**
+
+- GitHub: [@vinc38300](https://github.com/vinc38300)
+- Projet: [Chrono_Ski_Vinc](https://github.com/vinc38300/Chrono_Ski_Vinc)
+
+---
+
+## 🙏 Remerciements
+
+- Communauté Apache Cordova
+- Contributeurs F-Droid
+- Tous les utilisateurs et testeurs
+
+---
+
+## 📊 Statistiques
+
+![GitHub release](https://img.shields.io/github/v/release/vinc38300/Chrono_Ski_Vinc)
+![GitHub](https://img.shields.io/github/license/vinc38300/Chrono_Ski_Vinc)
+![GitHub stars](https://img.shields.io/github/stars/vinc38300/Chrono_Ski_Vinc)
+
+---
+
+**Chrono Race Pro** - Chronométrage sportif professionnel open source

@@ -1,0 +1,38 @@
+Professional timing application for ski races and sports events.
+
+MAIN FEATURES
+
+- Multi-runner simultaneous timing
+- 1-phone (LOCAL) or 2-phones mode (START/FINISH via SMS)
+- Import participants from Excel/CSV
+- Voice dictation for quick entry
+- CSV results export
+- Automatic real-time ranking
+- High-visibility interface for outdoor conditions
+
+MULTI-PHONE MODE
+
+The phone at start automatically sends SMS to finish phone with exact departure time. Race time is calculated with maximum precision.
+
+PARTICIPANTS MANAGEMENT
+
+- Import from Excel (.xlsx, .xls), CSV or OpenDocument (.ods) files
+- Manual entry with automatic numbering
+- Waiting list for precise group starts
+- Selection from contacts
+
+RESULTS AND EXPORT
+
+- Automatic ranking with podium
+- CSV export with all details
+- Automatic data backup
+- Tenth of second precision
+
+IDEAL FOR
+
+- Ski instructors
+- Race organizers
+- Sports clubs
+- Amateur and professional competitions
+
+100% free app, no ads, no tracking, privacy-friendly.

@@ -1,0 +1,38 @@
+Application de chronométrage professionnel pour courses de ski et événements sportifs.
+
+FONCTIONNALITÉS PRINCIPALES
+
+- Chronométrage multi-coureurs simultané
+- Mode 1 téléphone (LOCAL) ou 2 téléphones (DÉPART/ARRIVÉE via SMS)
+- Import de participants depuis Excel/CSV
+- Dictée vocale pour saisie rapide
+- Export des résultats en CSV
+- Classement automatique en temps réel
+- Interface haute visibilité pour conditions extérieures
+
+MODE MULTI-TÉLÉPHONES
+
+Le téléphone au départ envoie automatiquement un SMS au téléphone à l'arrivée avec l'heure exacte de départ. Le temps de course est calculé avec précision maximale.
+
+GESTION DES PARTICIPANTS
+
+- Import depuis fichiers Excel (.xlsx, .xls), CSV ou OpenDocument (.ods)
+- Saisie manuelle avec numérotation automatique
+- Liste d'attente pour départs groupés précis
+- Sélection depuis le carnet de contacts
+
+RÉSULTATS ET EXPORT
+
+- Classement automatique avec podium
+- Export CSV avec tous les détails
+- Sauvegarde automatique des données
+- Précision au dixième de seconde
+
+IDÉAL POUR
+
+- Moniteurs de ski
+- Organisateurs de courses
+- Clubs sportifs
+- Compétitions amateurs et professionnelles
+
+Application 100% gratuite, sans publicité, sans tracking, respectueuse de votre vie privée.
