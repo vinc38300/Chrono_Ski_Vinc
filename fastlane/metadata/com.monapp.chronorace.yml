@@ -1,0 +1,92 @@
+Categories:
+  - Sports & Health
+  - Time
+
+License: GPL-3.0-only
+
+AuthorName: vinc38300
+AuthorWebSite: https://github.com/vinc38300
+
+SourceCode: https://github.com/vinc38300/Chrono_Ski_Vinc
+IssueTracker: https://github.com/vinc38300/Chrono_Ski_Vinc/issues
+
+AutoName: Chrono Race Pro
+
+Summary: Chronomètre sportif professionnel pour courses et compétitions
+
+Description: |-
+  Application de chronométrage sportif professionnelle, spécialement conçue pour
+  les moniteurs de ski, organisateurs de courses et événements sportifs.
+  
+  <b>Fonctionnalités principales</b>
+  
+  • Chronométrage simultané de plusieurs coureurs
+  • Trois modes de fonctionnement : LOCAL (1 téléphone), DÉPART et ARRIVÉE (2 téléphones)
+  • Communication automatique par SMS entre téléphones départ/arrivée
+  • Import de listes de participants (Excel .xlsx/.xls, CSV, OpenDocument .ods)
+  • Gestion des départs groupés ou individuels avec liste d'attente
+  • Classement automatique en temps réel avec podium
+  • Export des résultats en format CSV
+  • Dictée vocale pour saisie rapide des noms
+  • Sélection rapide depuis le carnet de contacts
+  • Précision au dixième de seconde (milliseconde en interne)
+  • Interface haute visibilité optimisée pour conditions extérieures
+  
+  <b>Utilisation typique</b>
+  
+  Mode local : Idéal pour petites courses, tout le chronométrage sur un seul appareil.
+  
+  Mode multi-téléphones : Pour courses professionnelles avec points de départ et
+  arrivée distants. Le téléphone DÉPART envoie automatiquement par SMS l'heure de
+  départ au téléphone ARRIVÉE qui calcule le temps de course.
+  
+  <b>Gestion des participants</b>
+  
+  • Import depuis fichiers Excel/CSV avec colonnes Nom et Numéro
+  • Saisie manuelle avec numérotation automatique
+  • Liste d'attente pour départs groupés précis
+  • Statut temps réel de chaque coureur
+  
+  <b>Export et résultats</b>
+  
+  • Classement automatique par temps
+  • Médailles virtuelles pour le podium
+  • Export CSV avec position, nom, numéro, temps et horodatage
+  • Sauvegarde automatique de toutes les données
+  
+  <b>Interface intuitive</b>
+  
+  • Design moderne avec codes couleurs (vert=action, orange=pause, rouge=annuler)
+  • Gros boutons tactiles faciles à utiliser avec gants
+  • Animations visuelles pour repérage rapide
+  • Menu debug pour tests et dépannage
+  
+  Application 100% gratuite, sans publicité, sans tracking, respectueuse de votre
+  vie privée. Code source complet disponible sur GitHub.
+
+RepoType: git
+Repo: https://github.com/vinc38300/Chrono_Ski_Vinc.git
+
+Builds:
+  - versionName: '3.0.2'
+    versionCode: 30002
+    commit: v3.0.2
+    subdir: platforms/android/app
+    sudo:
+      - apt-get update
+      - apt-get install -y nodejs npm
+    init:
+      - cd ../..
+      - npm install -g cordova@latest
+    prebuild:
+      - cd ../..
+      - npm install
+      - cordova platform add android@13.0.0
+      - cordova prepare android
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: '3.0.2'
+CurrentVersionCode: 30002
