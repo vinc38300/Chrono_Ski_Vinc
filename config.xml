@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.monapp.chronorace" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>Chrono Ski Vinc</name>
-    <description>Application de chronométrage pour courses</description>
-    <author email="votre@email.com" href="https://votresite.com">
-        Votre Nom
+<widget id="com.monapp.chronorace" version="3.0.2" android-versionCode="30002" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Chrono Race Pro</name>
+    <description>Application de chronométrage professionnel pour courses de ski et compétitions sportives</description>
+    <author email="votre@email.com" href="https://github.com/vinc38300/Chrono_Ski_Vinc">
+        vinc38300
     </author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
@@ -35,11 +35,16 @@
         <icon density="xxxhdpi" src="res/android/xxxhdpi.png" />
         
         <!-- Nom court sous l'icône -->
-        <preference name="AndroidLauncherName" value="ChronoSki" />
+        <preference name="AndroidLauncherName" value="ChronoRace" />
         
         <!-- Désactiver le splash screen -->
         <preference name="SplashScreen" value="none" />
         <preference name="SplashScreenDelay" value="0" />
+        
+        <!-- Optimisations pour F-Droid -->
+        <preference name="android-minSdkVersion" value="22" />
+        <preference name="android-targetSdkVersion" value="33" />
+        <preference name="android-compileSdkVersion" value="34" />
     </platform>
       
     <!-- Configuration iOS -->

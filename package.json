@@ -1,19 +1,24 @@
 {
   "name": "com.monapp.chronorace",
-  "displayName": "Chrono Race",
-  "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "displayName": "Chrono Race Pro",
+  "version": "3.0.2",
+  "description": "Chronomètre sportif professionnel pour courses de ski et compétitions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "ecosystem:cordova"
+    "ecosystem:cordova",
+    "chronometer",
+    "sports",
+    "timing",
+    "ski",
+    "racing"
   ],
-  "author": "Apache Cordova Team",
-  "license": "Apache-2.0",
+  "author": "vinc38300",
+  "license": "GPL-3.0-only",
   "devDependencies": {
-    "cordova-android": "^14.0.1",
+    "cordova-android": "^13.0.0",
     "cordova-browser": "^7.0.0",
     "cordova-plugin-android-permissions": "^1.1.5",
     "cordova-plugin-chooser": "^1.3.2",
