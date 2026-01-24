@@ -54,7 +54,7 @@ Chrono Race Pro est une application Android de chronométrage pour courses et co
 
 ### Installation via APK
 
-1. Téléchargez le fichier `ChronoRacePro.apk`
+1. Téléchargez le fichier `ChronoRacePro.apk`ou https://github.com/vinc38300/Chrono_Ski_Vinc/releases
 2. Autorisez l'installation depuis des sources inconnues
 3. Installez l'application
 4. Accordez les permissions demandées
